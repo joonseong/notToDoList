@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>첫 실행 온보딩</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Noto Sans KR',sans-serif;background:#FBF6EC;color:#4A3728}
+a{color:#4A3728}a:hover{color:#D9776B}
+.nt-breathe{transform-origin:50% 100%;animation:nt-breathe 2.6s ease-in-out infinite}
+@keyframes nt-breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.035) scaleX(1.01)}}
+.nt-pick{transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease}
+.nt-pick:active{transform:scale(.9)}
+.nt-btn{transition:transform .28s cubic-bezier(.34,1.56,.64,1)}
+.nt-btn:active{transform:scale(.94)}
+.nt-in{animation:nt-pop .55s cubic-bezier(.34,1.56,.64,1) both}
+.nt-d1{animation-delay:.05s}.nt-d2{animation-delay:.15s}.nt-d3{animation-delay:.25s}.nt-d4{animation-delay:.35s}
+@keyframes nt-pop{0%{transform:translateY(30px) scale(.94);opacity:0}60%{transform:translateY(-4px) scale(1.01);opacity:1}100%{transform:translateY(0) scale(1);opacity:1}}
+input::placeholder{color:#B39E88}
+input:focus{outline:2px solid #E8B84A;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; padding: 72px 24px 40px 24px; background: #FBF6EC; display: flex; flex-direction: column; align-items: center; gap: 18px;">
+
+  <div class="nt-in nt-d1" style="width: 180px; height: 196px; display: flex; align-items: flex-end; justify-content: center;">
+    <svg class="nt-breathe" viewBox="0 0 120 130" width="180" height="196" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+      <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+      <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+      <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+      <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+      <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+      <circle cx="47" cy="58" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="58" r="3.5" fill="#4A3728" stroke="none"/>
+      <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M54 74 q6 4 12 0" fill="none"/>
+      <path d="M22 62 h12 M22 70 h12 M86 62 h12 M86 70 h12" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="nt-in nt-d2" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <h1 style="margin: 0; font-family: 'Jua', sans-serif; font-size: 30px; font-weight: 400; line-height: 1.25; text-align: center;">오늘 하지 않을 것을<br>하나만 적어보세요</h1>
+    <p style="margin: 0; font-size: 14px; color: #8C7A66; text-align: center; line-height: 1.55;">할 일은 다른 앱에 두고 오세요.<br>여기선 안 할 일만 지켜요.</p>
+  </div>
+
+  <div class="nt-in nt-d3" style="width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
+    <label for="nt-first" style="font-size: 13px; font-weight: 500; color: #8C7A66;">안 할 일</label>
+    <input id="nt-first" type="text" placeholder="예: 자기 전 숏폼 보기" style="box-sizing: border-box; width: 100%; height: 56px; padding: 0 18px; border-radius: 18px; border: 2.5px solid #4A3728; background: #FFFDF7; box-shadow: 4px 4px 0 rgba(74,55,40,0.14); font-family: 'Jua', sans-serif; font-size: 20px; color: #4A3728;">
+  </div>
+
+  <div class="nt-in nt-d4" style="width: 100%; display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 13px; font-weight: 500; color: #8C7A66;">같이 지켜줄 친구</div>
+    <div style="display: flex; justify-content: space-between;">
+      <button class="nt-pick" aria-label="고양이" style="all: unset; cursor: pointer; width: 58px; height: 58px; border-radius: 999px; background: #FFF8EA; border: 3px solid #E8B84A; box-shadow: 0 0 0 3px #4A3728; display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="30 20 60 56" width="42" height="40" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M38 44 L33 22 L54 34 Z" fill="#FFF8EA"/><path d="M82 44 L87 22 L66 34 Z" fill="#FFF8EA"/><circle cx="60" cy="54" r="24" fill="#FFF8EA"/><circle cx="51" cy="54" r="3" fill="#4A3728" stroke="none"/><circle cx="69" cy="54" r="3" fill="#4A3728" stroke="none"/><path d="M56 63 q4 3 8 0" fill="none"/></svg>
+      </button>
+      <button class="nt-pick" aria-label="강아지" style="all: unset; cursor: pointer; width: 58px; height: 58px; border-radius: 999px; background: #FFFDF7; border: 3px solid #FFFDF7; box-shadow: 0 0 0 2px #4A3728; display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="26 24 68 56" width="42" height="40" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="36" cy="54" rx="8" ry="16" fill="#B98A5A"/><ellipse cx="84" cy="54" rx="8" ry="16" fill="#B98A5A"/><circle cx="60" cy="52" r="24" fill="#EBCFA3"/><circle cx="51" cy="50" r="3" fill="#4A3728" stroke="none"/><circle cx="69" cy="50" r="3" fill="#4A3728" stroke="none"/><ellipse cx="60" cy="60" rx="5" ry="3.5" fill="#4A3728" stroke="none"/></svg>
+      </button>
+      <button class="nt-pick" aria-label="토끼" style="all: unset; cursor: pointer; width: 58px; height: 58px; border-radius: 999px; background: #FFFDF7; border: 3px solid #FFFDF7; box-shadow: 0 0 0 2px #4A3728; display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="30 4 60 72" width="42" height="40" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="48" cy="20" rx="7" ry="18" fill="#FFF6F0"/><ellipse cx="72" cy="20" rx="7" ry="18" fill="#FFF6F0"/><circle cx="60" cy="52" r="24" fill="#FFF6F0"/><circle cx="51" cy="52" r="3" fill="#4A3728" stroke="none"/><circle cx="69" cy="52" r="3" fill="#4A3728" stroke="none"/><path d="M57 60 h6 l-3 3 z" fill="#D9776B" stroke="none"/></svg>
+      </button>
+      <button class="nt-pick" aria-label="곰" style="all: unset; cursor: pointer; width: 58px; height: 58px; border-radius: 999px; background: #FFFDF7; border: 3px solid #FFFDF7; box-shadow: 0 0 0 2px #4A3728; display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="26 16 68 62" width="42" height="40" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="40" cy="30" r="9" fill="#C9A27A"/><circle cx="80" cy="30" r="9" fill="#C9A27A"/><circle cx="60" cy="52" r="24" fill="#C9A27A"/><ellipse cx="60" cy="60" rx="10" ry="7" fill="#F0DCC2"/><circle cx="51" cy="50" r="3" fill="#4A3728" stroke="none"/><circle cx="69" cy="50" r="3" fill="#4A3728" stroke="none"/><ellipse cx="60" cy="58" rx="3.5" ry="2.5" fill="#4A3728" stroke="none"/></svg>
+      </button>
+      <button class="nt-pick" aria-label="고슴도치" style="all: unset; cursor: pointer; width: 58px; height: 58px; border-radius: 999px; background: #FFFDF7; border: 3px solid #FFFDF7; box-shadow: 0 0 0 2px #4A3728; display: flex; align-items: center; justify-content: center;">
+        <svg viewBox="22 14 76 66" width="42" height="40" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M30 60 L24 36 L40 42 L44 18 L58 32 L68 14 L76 34 L94 22 L92 44 L96 58 Z" fill="#8B6A4E"/><ellipse cx="58" cy="60" rx="24" ry="18" fill="#F4DEC2"/><circle cx="50" cy="56" r="3" fill="#4A3728" stroke="none"/><circle cx="66" cy="56" r="3" fill="#4A3728" stroke="none"/><circle cx="58" cy="66" r="3.5" fill="#4A3728" stroke="none"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <a href="Main.dc.html" class="nt-btn" style="text-decoration: none; box-sizing: border-box; width: 100%; height: 58px; border-radius: 18px; background: #E8B84A; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.22); display: flex; align-items: center; justify-content: center; font-family: 'Jua', sans-serif; font-size: 20px; color: #4A3728;">고양이랑 시작하기</a>
+  <div style="font-size: 12px; color: #B39E88;">로그인 없이 바로 시작해요. 데이터는 이 기기에만 저장돼요.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

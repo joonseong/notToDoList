@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>오늘 화면</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Noto Sans KR',sans-serif;background:#FBF6EC;color:#4A3728}
+a{color:#4A3728}a:hover{color:#D9776B}
+.nt-card{transition:transform .32s cubic-bezier(.34,1.56,.64,1),background-color .4s ease;animation:nt-pop .55s cubic-bezier(.34,1.56,.64,1) both}
+.nt-card:active{transform:scale(.95)}
+.nt-card:disabled{cursor:default}
+.nt-card:disabled:active{transform:none}
+.nt-d1{animation-delay:.05s}.nt-d2{animation-delay:.14s}.nt-d3{animation-delay:.23s}
+@keyframes nt-pop{0%{transform:translateY(40px) scale(.9);opacity:0}60%{transform:translateY(-6px) scale(1.02);opacity:1}100%{transform:translateY(0) scale(1);opacity:1}}
+.nt-breathe{transform-origin:50% 100%;animation:nt-breathe 2.6s ease-in-out infinite}
+@keyframes nt-breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.035) scaleX(1.01)}}
+.nt-shake{animation:nt-shake .4s ease both}
+@keyframes nt-shake{0%{transform:translateX(0)}20%{transform:translateX(-7px) rotate(-1deg)}45%{transform:translateX(6px) rotate(1deg)}70%{transform:translateX(-3px)}100%{transform:translateX(0)}}
+.nt-zz{animation:nt-zz 2.2s ease-in-out infinite}
+@keyframes nt-zz{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(-5px);opacity:1}}
+.nt-sheet{animation:nt-up .42s cubic-bezier(.34,1.4,.64,1) both}
+@keyframes nt-up{0%{transform:translateY(110%)}100%{transform:translateY(0)}}
+.nt-dim{animation:nt-fade .25s ease both}
+@keyframes nt-fade{0%{opacity:0}100%{opacity:1}}
+.nt-tilt{transform-origin:50% 80%;animation:nt-tilt 1.6s ease-in-out infinite}
+@keyframes nt-tilt{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.nt-btn{transition:transform .28s cubic-bezier(.34,1.56,.64,1)}
+.nt-btn:active{transform:scale(.94)}
+.nt-fab{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.nt-fab:active{transform:scale(.9) rotate(90deg)}
+.nt-toast{animation:nt-drop .5s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes nt-drop{0%{transform:translateY(-30px) scale(.9);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
+input::placeholder{color:#B39E88}
+input:focus{outline:2px solid #E8B84A;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #FBF6EC; display: flex; flex-direction: column;">
+
+  <div style="padding: 60px 24px 0 24px; display: flex; flex-direction: column; gap: 6px;">
+    <div style="font-size: 14px; font-weight: 500; color: #8C7A66;">9월 20일 토요일</div>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+      <h1 style="margin: 0; font-family: 'Jua', sans-serif; font-size: 34px; font-weight: 400; line-height: 1.1;">오늘은 아니야</h1>
+      <div style="padding: 6px 12px; border-radius: 999px; background: {{pillBg}}; border: 2px solid #4A3728; font-family: 'Jua', sans-serif; font-size: 15px; color: #4A3728;">{{pillText}}</div>
+    </div>
+  </div>
+
+  <sc-if value="{{toast}}" hint-placeholder-val="{{false}}">
+  <div class="nt-toast" style="margin: 18px 24px 0 24px; padding: 12px 16px; border-radius: 18px; background: #F2D4CE; border: 2px solid #4A3728; display: flex; align-items: center; gap: 10px;">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#4A3728" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14 q9 -10 18 0"/><circle cx="8" cy="18" r="1.4" fill="#4A3728"/><circle cx="18" cy="18" r="1.4" fill="#4A3728"/></svg>
+    <div style="font-family: 'Jua', sans-serif; font-size: 16px; line-height: 1.3;">{{toastText}}</div>
+  </div>
+  </sc-if>
+
+  <div style="padding: 20px 24px 0 24px; display: flex; flex-direction: column; gap: 14px;">
+
+    <button class="nt-card nt-d1 {{c1.shake}}" onClick="{{c1.tap}}" disabled="{{c1.bad}}" style="all: unset; cursor: pointer; box-sizing: border-box; width: 342px; padding: 14px 16px; border-radius: 24px; background: {{c1.bg}}; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.18); display: flex; align-items: center; gap: 14px;">
+      <div style="width: 88px; height: 96px; flex-shrink: 0;">
+        <sc-if value="{{c1.ok}}" hint-placeholder-val="{{true}}">
+        <svg class="nt-breathe" viewBox="0 0 120 130" width="88" height="96" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+          <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+          <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+          <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+          <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+          <circle cx="47" cy="58" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="58" r="3.5" fill="#4A3728" stroke="none"/>
+          <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M54 74 q6 4 12 0" fill="none"/>
+          <path d="M22 62 h12 M22 70 h12 M86 62 h12 M86 70 h12" fill="none"/>
+        </svg>
+        </sc-if>
+        <sc-if value="{{c1.bad}}" hint-placeholder-val="{{false}}">
+        <svg viewBox="0 0 120 130" width="88" height="96" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <g transform="rotate(-8 60 70)">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/>
+          <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+          <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+          <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+          <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+          <path d="M42 59 q5 5 10 0 M68 59 q5 5 10 0" fill="none"/>
+          <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M57 74 q3 2 6 0" fill="none"/>
+          <path d="M26 92 h68 v22 q0 8 -8 8 h-52 q-8 0 -8 -8 z" fill="#F2D4CE"/>
+          <circle cx="44" cy="106" r="2.5" fill="#D9776B" stroke="none"/><circle cx="62" cy="112" r="2.5" fill="#D9776B" stroke="none"/><circle cx="78" cy="104" r="2.5" fill="#D9776B" stroke="none"/>
+          </g>
+          <text class="nt-zz" x="94" y="34" font-family="Jua, sans-serif" font-size="18" fill="#8FA98A" stroke="none">z z</text>
+        </svg>
+        </sc-if>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 22px; line-height: 1.2;">자기 전 숏폼 보기</div>
+        <div style="font-size: 13px; font-weight: 500; color: {{c1.subColor}};">{{c1.sub}}</div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#4A3728" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; opacity: .5;"><path d="M7 4 l6 6 -6 6"/></svg>
+    </button>
+
+    <button class="nt-card nt-d2 {{c2.shake}}" onClick="{{c2.tap}}" disabled="{{c2.bad}}" style="all: unset; cursor: pointer; box-sizing: border-box; width: 342px; padding: 14px 16px; border-radius: 24px; background: {{c2.bg}}; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.18); display: flex; align-items: center; gap: 14px;">
+      <div style="width: 88px; height: 96px; flex-shrink: 0;">
+        <sc-if value="{{c2.ok}}" hint-placeholder-val="{{true}}">
+        <svg class="nt-breathe" viewBox="0 0 120 130" width="88" height="96" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#D9776B"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+          <circle cx="34" cy="30" r="11" fill="#C9A27A"/><circle cx="86" cy="30" r="11" fill="#C9A27A"/>
+          <circle cx="34" cy="30" r="5" fill="#E8C9A6" stroke="none"/><circle cx="86" cy="30" r="5" fill="#E8C9A6" stroke="none"/>
+          <circle cx="60" cy="58" r="34" fill="#C9A27A"/>
+          <ellipse cx="60" cy="70" rx="14" ry="10" fill="#F0DCC2"/>
+          <circle cx="36" cy="66" r="6" fill="#F2B8B0" stroke="none" opacity=".8"/><circle cx="84" cy="66" r="6" fill="#F2B8B0" stroke="none" opacity=".8"/>
+          <circle cx="47" cy="56" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="56" r="3.5" fill="#4A3728" stroke="none"/>
+          <ellipse cx="60" cy="66" rx="4.5" ry="3.5" fill="#4A3728" stroke="none"/><path d="M56 74 q4 3 8 0" fill="none"/>
+        </svg>
+        </sc-if>
+        <sc-if value="{{c2.bad}}" hint-placeholder-val="{{false}}">
+        <svg viewBox="0 0 120 130" width="88" height="96" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <g transform="rotate(-8 60 70)">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#D9776B"/>
+          <circle cx="34" cy="30" r="11" fill="#C9A27A"/><circle cx="86" cy="30" r="11" fill="#C9A27A"/>
+          <circle cx="34" cy="30" r="5" fill="#E8C9A6" stroke="none"/><circle cx="86" cy="30" r="5" fill="#E8C9A6" stroke="none"/>
+          <circle cx="60" cy="58" r="34" fill="#C9A27A"/>
+          <ellipse cx="60" cy="70" rx="14" ry="10" fill="#F0DCC2"/>
+          <path d="M42 57 q5 5 10 0 M68 57 q5 5 10 0" fill="none"/>
+          <ellipse cx="60" cy="66" rx="4.5" ry="3.5" fill="#4A3728" stroke="none"/><path d="M57 74 q3 2 6 0" fill="none"/>
+          <path d="M26 92 h68 v22 q0 8 -8 8 h-52 q-8 0 -8 -8 z" fill="#F2D4CE"/>
+          <circle cx="44" cy="106" r="2.5" fill="#D9776B" stroke="none"/><circle cx="62" cy="112" r="2.5" fill="#D9776B" stroke="none"/><circle cx="78" cy="104" r="2.5" fill="#D9776B" stroke="none"/>
+          </g>
+          <text class="nt-zz" x="94" y="34" font-family="Jua, sans-serif" font-size="18" fill="#8FA98A" stroke="none">z z</text>
+        </svg>
+        </sc-if>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 22px; line-height: 1.2;">야식 먹기</div>
+        <div style="font-size: 13px; font-weight: 500; color: {{c2.subColor}};">{{c2.sub}}</div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#4A3728" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; opacity: .5;"><path d="M7 4 l6 6 -6 6"/></svg>
+    </button>
+
+    <button class="nt-card nt-d3 {{c3.shake}}" onClick="{{c3.tap}}" disabled="{{c3.bad}}" style="all: unset; cursor: pointer; box-sizing: border-box; width: 342px; padding: 14px 16px; border-radius: 24px; background: {{c3.bg}}; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.18); display: flex; align-items: center; gap: 14px;">
+      <div style="width: 88px; height: 96px; flex-shrink: 0;">
+        <sc-if value="{{c3.ok}}" hint-placeholder-val="{{true}}">
+        <svg class="nt-breathe" viewBox="0 0 120 130" width="88" height="96" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#E8B84A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+          <ellipse cx="45" cy="20" rx="9" ry="24" fill="#FFF6F0"/><ellipse cx="75" cy="20" rx="9" ry="24" fill="#FFF6F0"/>
+          <ellipse cx="45" cy="22" rx="4" ry="15" fill="#F2B8B0" stroke="none"/><ellipse cx="75" cy="22" rx="4" ry="15" fill="#F2B8B0" stroke="none"/>
+          <circle cx="60" cy="60" r="33" fill="#FFF6F0"/>
+          <circle cx="38" cy="70" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="70" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+          <circle cx="47" cy="59" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="59" r="3.5" fill="#4A3728" stroke="none"/>
+          <path d="M57 68 h6 l-3 3 z" fill="#D9776B" stroke="none"/><path d="M55 74 q5 4 10 0" fill="none"/>
+        </svg>
+        </sc-if>
+        <sc-if value="{{c3.bad}}" hint-placeholder-val="{{false}}">
+        <svg viewBox="0 0 120 130" width="88" height="96" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <g transform="rotate(-8 60 70)">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#E8B84A"/>
+          <ellipse cx="45" cy="26" rx="9" ry="24" fill="#FFF6F0" transform="rotate(-18 45 44)"/><ellipse cx="75" cy="26" rx="9" ry="24" fill="#FFF6F0" transform="rotate(18 75 44)"/>
+          <circle cx="60" cy="60" r="33" fill="#FFF6F0"/>
+          <path d="M42 60 q5 5 10 0 M68 60 q5 5 10 0" fill="none"/>
+          <path d="M57 68 h6 l-3 3 z" fill="#D9776B" stroke="none"/><path d="M57 75 q3 2 6 0" fill="none"/>
+          <path d="M26 92 h68 v22 q0 8 -8 8 h-52 q-8 0 -8 -8 z" fill="#F2D4CE"/>
+          <circle cx="44" cy="106" r="2.5" fill="#D9776B" stroke="none"/><circle cx="62" cy="112" r="2.5" fill="#D9776B" stroke="none"/><circle cx="78" cy="104" r="2.5" fill="#D9776B" stroke="none"/>
+          </g>
+          <text class="nt-zz" x="94" y="34" font-family="Jua, sans-serif" font-size="18" fill="#8FA98A" stroke="none">z z</text>
+        </svg>
+        </sc-if>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 22px; line-height: 1.2;">퇴근 후 게임 켜기</div>
+        <div style="font-size: 13px; font-weight: 500; color: {{c3.subColor}};">{{c3.sub}}</div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#4A3728" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; opacity: .5;"><path d="M7 4 l6 6 -6 6"/></svg>
+    </button>
+
+    <div style="padding: 6px 4px 0 4px; font-size: 13px; color: #8C7A66; line-height: 1.5;">어겼을 때만 카드를 눌러요. 아무것도 안 하면 오늘은 성공이에요.</div>
+  </div>
+
+  <button class="nt-fab" aria-label="안 할 일 추가" style="all: unset; cursor: pointer; position: absolute; right: 24px; bottom: 104px; width: 64px; height: 64px; border-radius: 999px; background: #E8B84A; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.22); display: flex; align-items: center; justify-content: center;">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#4A3728" stroke-width="3.2" stroke-linecap="round"><path d="M14 5 v18 M5 14 h18"/></svg>
+  </button>
+
+  <nav style="position: absolute; left: 0; right: 0; bottom: 0; height: 84px; box-sizing: border-box; padding: 10px 24px 24px 24px; background: #FFFDF7; border-top: 2.5px solid #4A3728; display: flex; justify-content: space-around; align-items: center;">
+    <a href="Main.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; min-height: 44px; justify-content: center; color: #4A3728;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#E8B84A" stroke="#4A3728" stroke-width="2.2" stroke-linejoin="round"><path d="M4 11 L12 4 L20 11 V20 H4 Z"/></svg>
+      <span style="font-family: 'Jua', sans-serif; font-size: 12px;">오늘</span>
+    </a>
+    <a href="Detail.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; min-height: 44px; justify-content: center; color: #8C7A66;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8C7A66" stroke-width="2.2" stroke-linecap="round"><path d="M5 19 V12 M12 19 V6 M19 19 V10"/></svg>
+      <span style="font-family: 'Jua', sans-serif; font-size: 12px;">통계</span>
+    </a>
+    <a href="Main.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 64px; min-height: 44px; justify-content: center; color: #8C7A66;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8C7A66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3 M5.6 5.6 l2.1 2.1 M16.3 16.3 l2.1 2.1 M5.6 18.4 l2.1 -2.1 M16.3 7.7 l2.1 -2.1"/></svg>
+      <span style="font-family: 'Jua', sans-serif; font-size: 12px;">설정</span>
+    </a>
+  </nav>
+
+  <sc-if value="{{sheetOpen}}" hint-placeholder-val="{{false}}">
+  <div class="nt-dim" style="position: absolute; inset: 0; background: rgba(74,55,40,0.45); display: flex; flex-direction: column; justify-content: flex-end;">
+    <div class="nt-sheet" style="box-sizing: border-box; padding: 20px 24px 36px 24px; background: #FFFDF7; border-radius: 32px 32px 0 0; border-top: 2.5px solid #4A3728; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <div style="width: 48px; height: 5px; border-radius: 999px; background: #4A3728; opacity: .3;"></div>
+      <div style="width: 120px; height: 130px; display: flex; align-items: flex-end; justify-content: center;">
+        <svg class="nt-tilt" viewBox="0 0 120 130" width="120" height="130" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+          <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+          <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 6 L66 28 Z" fill="#FFF8EA"/>
+          <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 17 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+          <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+          <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+          <circle cx="47" cy="58" r="4" fill="#4A3728" stroke="none"/><circle cx="73" cy="58" r="4" fill="#4A3728" stroke="none"/>
+          <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><circle cx="60" cy="77" r="3" fill="none"/>
+          <path d="M22 62 h12 M22 70 h12 M86 62 h12 M86 70 h12" fill="none"/>
+          <text x="96" y="30" font-family="Jua, sans-serif" font-size="26" fill="#D9776B" stroke="none">?</text>
+        </svg>
+      </div>
+      <div style="font-family: 'Jua', sans-serif; font-size: 26px; line-height: 1.2;">정말 어겼나요?</div>
+      <div style="font-size: 15px; color: #8C7A66; text-align: center; line-height: 1.5;">{{sheetTitle}}<br>한 번 기록하면 오늘은 되돌릴 수 없어요.</div>
+      <label for="nt-note" style="align-self: flex-start; font-size: 13px; font-weight: 500; color: #8C7A66; margin-top: 4px;">무슨 일이 있었나요? (선택)</label>
+      <input id="nt-note" type="text" placeholder="예: 너무 피곤해서 그냥 눌렀다" style="box-sizing: border-box; width: 100%; height: 50px; padding: 0 16px; border-radius: 16px; border: 2px solid #4A3728; background: #FBF6EC; font-family: 'Noto Sans KR', sans-serif; font-size: 15px; color: #4A3728;">
+      <button class="nt-btn" onClick="{{confirm}}" style="all: unset; cursor: pointer; box-sizing: border-box; width: 100%; height: 56px; border-radius: 18px; background: #D9776B; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.22); display: flex; align-items: center; justify-content: center; font-family: 'Jua', sans-serif; font-size: 20px; color: #FFFDF7; margin-top: 4px;">네, 어겼어요</button>
+      <button class="nt-btn" onClick="{{cancel}}" style="all: unset; cursor: pointer; box-sizing: border-box; width: 100%; height: 48px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-family: 'Jua', sans-serif; font-size: 18px; color: #8C7A66;">아니요, 지키는 중이에요</button>
+    </div>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sheetFor: null, violated: {}, toast: false, toastText: '' };
+    this.items = {
+      c1: { title: '자기 전 숏폼 보기', days: 12, line: '아… 오늘은 아니었네. 내일 다시 해보자.' },
+      c2: { title: '야식 먹기', days: 5, line: '괜찮아, 기록만 해뒀어. 곰이는 먼저 잘게.' },
+      c3: { title: '퇴근 후 게임 켜기', days: 21, line: '21일 만이네. 토끼는 일단 눕는다.' }
+    };
+  }
+  card(id) {
+    const it = this.items[id];
+    const v = this.state.violated[id];
+    const bad = !!v;
+    return {
+      ok: !bad,
+      bad: bad,
+      bg: bad ? '#F8E3DF' : '#FFFDF7',
+      sub: bad ? ('어김 ' + v + ' · 오늘은 아니었네') : (it.days + '일째 지키는 중'),
+      subColor: bad ? '#B8584C' : '#6E8A69',
+      shake: this.state.lastShake === id ? 'nt-shake' : '',
+      tap: () => { if (!bad) this.setState({ sheetFor: id, toast: false }); }
+    };
+  }
+  renderVals() {
+    const violated = this.state.violated;
+    const badCount = Object.keys(violated).length;
+    const okCount = 3 - badCount;
+    const cur = this.state.sheetFor;
+    return {
+      c1: this.card('c1'), c2: this.card('c2'), c3: this.card('c3'),
+      pillText: badCount === 0 ? '3개 모두 지키는 중' : (okCount + '개 지키는 중'),
+      pillBg: badCount === 0 ? '#8FA98A' : '#F2D4CE',
+      sheetOpen: !!cur,
+      sheetTitle: cur ? ('"' + this.items[cur].title + '"') : '',
+      toast: this.state.toast,
+      toastText: this.state.toastText,
+      confirm: () => {
+        if (!cur) return;
+        const d = new Date();
+        const hh = String(d.getHours()).padStart(2, '0');
+        const mm = String(d.getMinutes()).padStart(2, '0');
+        const next = Object.assign({}, violated);
+        next[cur] = hh + ':' + mm;
+        this.setState({ violated: next, sheetFor: null, lastShake: cur, toast: true, toastText: this.items[cur].line });
+      },
+      cancel: () => this.setState({ sheetFor: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

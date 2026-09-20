@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>스타일 가이드</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Noto Sans KR',sans-serif;background:#FBF6EC;color:#4A3728}
+a{color:#4A3728}a:hover{color:#D9776B}
+.nt-breathe{transform-origin:50% 100%;animation:nt-breathe 2.6s ease-in-out infinite}
+@keyframes nt-breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.035) scaleX(1.01)}}
+.nt-tilt{transform-origin:50% 80%;animation:nt-tilt 1.6s ease-in-out infinite}
+@keyframes nt-tilt{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.nt-jump{transform-origin:50% 100%;animation:nt-jump 1.4s cubic-bezier(.34,1.56,.64,1) infinite}
+@keyframes nt-jump{0%,100%{transform:translateY(0) scaleY(1)}12%{transform:translateY(0) scaleY(.88) scaleX(1.08)}40%{transform:translateY(-22px) scaleY(1.06) scaleX(.96)}70%{transform:translateY(0) scaleY(.94) scaleX(1.04)}82%{transform:translateY(0) scaleY(1)}}
+.nt-zz{animation:nt-zz 2.2s ease-in-out infinite}
+@keyframes nt-zz{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(-5px);opacity:1}}
+.nt-btn{transition:transform .28s cubic-bezier(.34,1.56,.64,1)}
+.nt-btn:active{transform:scale(.94)}
+</style>
+</helmet>
+<div style="width: 1240px; height: 820px; box-sizing: border-box; padding: 48px 56px; background: #FBF6EC; display: flex; flex-direction: column; gap: 28px;">
+
+  <div style="display: flex; align-items: baseline; gap: 16px;">
+    <h1 style="margin: 0; font-family: 'Jua', sans-serif; font-size: 40px; font-weight: 400;">Not Today</h1>
+    <span style="font-size: 16px; color: #8C7A66;">스타일 가이드 초안 · 크림 바탕, 갈색 선, 스프링 모션</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; flex-grow: 1;">
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 20px;">컬러</div>
+        <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #FBF6EC; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">배경 크림<br><span style="color: #8C7A66;">#FBF6EC</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #FFFDF7; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">카드 아이보리<br><span style="color: #8C7A66;">#FFFDF7</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #4A3728; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">선/텍스트<br><span style="color: #8C7A66;">#4A3728</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #8FA98A; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">지키는 중<br><span style="color: #8C7A66;">#8FA98A</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #D9776B; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">어김<br><span style="color: #8C7A66;">#D9776B</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #E8B84A; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">포인트<br><span style="color: #8C7A66;">#E8B84A</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="height: 64px; border-radius: 16px; background: #F2D4CE; border: 2.5px solid #4A3728;"></div><div style="font-size: 11px; font-weight: 500;">보조<br><span style="color: #8C7A66;">#F2D4CE</span></div></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 20px;">타이포</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; border-radius: 20px; background: #FFFDF7; border: 2.5px solid #4A3728;">
+          <div style="font-family: 'Jua', sans-serif; font-size: 34px; line-height: 1.1;">오늘은 아니야 <span style="font-size: 13px; font-family: 'Noto Sans KR', sans-serif; color: #8C7A66;">제목 · Jua 34</span></div>
+          <div style="font-family: 'Jua', sans-serif; font-size: 22px; line-height: 1.2;">자기 전 숏폼 보기 <span style="font-size: 13px; font-family: 'Noto Sans KR', sans-serif; color: #8C7A66;">카드 제목 · Jua 22</span></div>
+          <div style="font-size: 15px; line-height: 1.5;">한 번 기록하면 오늘은 되돌릴 수 없어요. <span style="font-size: 13px; color: #8C7A66;">본문 · Noto Sans KR 15 (앱은 Pretendard)</span></div>
+          <div style="font-size: 13px; font-weight: 500; color: #6E8A69;">12일째 지키는 중 <span style="color: #8C7A66;">보조 · 13 Medium</span></div>
+          <div style="font-family: 'Jua', sans-serif; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums;">86% <span style="font-size: 13px; font-family: 'Noto Sans KR', sans-serif; color: #8C7A66;">숫자 · Jua, tabular</span></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 20px;">컴포넌트</div>
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+          <button class="nt-btn" style="all: unset; cursor: pointer; height: 52px; padding: 0 24px; border-radius: 18px; background: #E8B84A; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.22); font-family: 'Jua', sans-serif; font-size: 18px; display: flex; align-items: center;">주요 버튼</button>
+          <button class="nt-btn" style="all: unset; cursor: pointer; height: 52px; padding: 0 24px; border-radius: 18px; background: #D9776B; border: 2.5px solid #4A3728; box-shadow: 4px 4px 0 rgba(74,55,40,0.22); font-family: 'Jua', sans-serif; font-size: 18px; color: #FFFDF7; display: flex; align-items: center;">네, 어겼어요</button>
+          <button class="nt-btn" style="all: unset; cursor: pointer; height: 44px; padding: 0 18px; border-radius: 999px; background: #FFFDF7; border: 2px solid #4A3728; font-family: 'Jua', sans-serif; font-size: 15px; display: flex; align-items: center;">보조 버튼</button>
+          <span style="padding: 6px 12px; border-radius: 999px; background: #8FA98A; border: 2px solid #4A3728; font-family: 'Jua', sans-serif; font-size: 14px;">3개 모두 지키는 중</span>
+          <span style="padding: 6px 12px; border-radius: 999px; background: #F2D4CE; border: 2px solid #4A3728; font-family: 'Jua', sans-serif; font-size: 14px;">2개 지키는 중</span>
+        </div>
+        <div style="font-size: 13px; color: #8C7A66; line-height: 1.5;">모든 면은 2.5px 갈색 선 + 4px 하드 섀도. 모서리 24px(카드), 18px(버튼), 999px(칩). 탭은 0.95로 눌렸다가 스프링으로 복귀.</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 20px;">캐릭터 상태 (고양이)</div>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 18px 12px 12px 12px; border-radius: 20px; background: #FFFDF7; border: 2.5px solid #4A3728;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <svg class="nt-breathe" viewBox="0 0 120 130" width="96" height="104" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+              <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+              <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+              <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+              <circle cx="47" cy="58" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="58" r="3.5" fill="#4A3728" stroke="none"/>
+              <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M54 74 q6 4 12 0" fill="none"/>
+              <path d="M22 62 h12 M22 70 h12 M86 62 h12 M86 70 h12" fill="none"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 14px;">지키는 중</div><div style="font-size: 11px; color: #8C7A66; text-align: center;">숨쉬기 루프</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <svg class="nt-tilt" viewBox="0 0 120 130" width="96" height="104" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 6 L66 28 Z" fill="#FFF8EA"/>
+              <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 17 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+              <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+              <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+              <circle cx="47" cy="58" r="4" fill="#4A3728" stroke="none"/><circle cx="73" cy="58" r="4" fill="#4A3728" stroke="none"/>
+              <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><circle cx="60" cy="77" r="3" fill="none"/>
+              <path d="M22 62 h12 M22 70 h12 M86 62 h12 M86 70 h12" fill="none"/>
+              <text x="96" y="30" font-family="Jua, sans-serif" font-size="26" fill="#D9776B" stroke="none">?</text>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 14px;">정말?</div><div style="font-size: 11px; color: #8C7A66; text-align: center;">확인 시트</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <svg viewBox="0 0 120 130" width="96" height="104" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <g transform="rotate(-8 60 70)">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/>
+              <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+              <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+              <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+              <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+              <path d="M42 59 q5 5 10 0 M68 59 q5 5 10 0" fill="none"/>
+              <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M57 74 q3 2 6 0" fill="none"/>
+              <path d="M26 92 h68 v22 q0 8 -8 8 h-52 q-8 0 -8 -8 z" fill="#F2D4CE"/>
+              <circle cx="44" cy="106" r="2.5" fill="#D9776B" stroke="none"/><circle cx="62" cy="112" r="2.5" fill="#D9776B" stroke="none"/><circle cx="78" cy="104" r="2.5" fill="#D9776B" stroke="none"/>
+              </g>
+              <text class="nt-zz" x="94" y="34" font-family="Jua, sans-serif" font-size="18" fill="#8FA98A" stroke="none">z z</text>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 14px;">어김</div><div style="font-size: 11px; color: #8C7A66; text-align: center;">눕고 잠듦, 화 안 냄</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+            <svg class="nt-jump" viewBox="0 0 120 130" width="96" height="104" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <path d="M32 96 l-12 -16 M88 96 l12 -16" fill="none"/>
+              <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+              <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+              <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+              <circle cx="38" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/><circle cx="82" cy="68" r="6" fill="#F2B8B0" stroke="none" opacity=".85"/>
+              <path d="M42 60 q5 -7 10 0 M68 60 q5 -7 10 0" fill="none"/>
+              <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M53 74 q7 9 14 0 z" fill="#D9776B"/>
+              <path d="M22 62 h12 M22 70 h12 M86 62 h12 M86 70 h12" fill="none"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 14px;">방어 성공</div><div style="font-size: 11px; color: #8C7A66; text-align: center;">다음날 요약에서 폴짝</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'Jua', sans-serif; font-size: 20px;">MVP 친구 5종</div>
+        <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; padding: 16px 8px 10px 8px; border-radius: 20px; background: #FFFDF7; border: 2.5px solid #4A3728;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+            <svg class="nt-breathe" viewBox="0 0 120 130" width="84" height="91" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <path d="M34 42 L28 12 L54 28 Z" fill="#FFF8EA"/><path d="M86 42 L92 12 L66 28 Z" fill="#FFF8EA"/>
+              <path d="M37 35 L34 21 L47 29 Z" fill="#F2B8B0" stroke="none"/><path d="M83 35 L86 21 L73 29 Z" fill="#F2B8B0" stroke="none"/>
+              <circle cx="60" cy="58" r="34" fill="#FFF8EA"/>
+              <circle cx="47" cy="58" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="58" r="3.5" fill="#4A3728" stroke="none"/>
+              <path d="M57 68 h6 l-3 3 z" fill="#4A3728" stroke="none"/><path d="M54 74 q6 4 12 0" fill="none"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 13px;">고양이</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+            <svg class="nt-breathe" viewBox="0 0 120 130" width="84" height="91" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#8FA98A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <ellipse cx="30" cy="60" rx="10" ry="20" fill="#B98A5A"/><ellipse cx="90" cy="60" rx="10" ry="20" fill="#B98A5A"/>
+              <circle cx="60" cy="58" r="33" fill="#EBCFA3"/>
+              <circle cx="47" cy="56" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="56" r="3.5" fill="#4A3728" stroke="none"/>
+              <ellipse cx="60" cy="68" rx="6" ry="4.5" fill="#4A3728" stroke="none"/><path d="M56 76 q4 6 8 0 z" fill="#F2B8B0"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 13px;">강아지</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+            <svg class="nt-breathe" viewBox="0 0 120 130" width="84" height="91" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#E8B84A"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <ellipse cx="45" cy="20" rx="9" ry="24" fill="#FFF6F0"/><ellipse cx="75" cy="20" rx="9" ry="24" fill="#FFF6F0"/>
+              <ellipse cx="45" cy="22" rx="4" ry="15" fill="#F2B8B0" stroke="none"/><ellipse cx="75" cy="22" rx="4" ry="15" fill="#F2B8B0" stroke="none"/>
+              <circle cx="60" cy="60" r="33" fill="#FFF6F0"/>
+              <circle cx="47" cy="59" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="59" r="3.5" fill="#4A3728" stroke="none"/>
+              <path d="M57 68 h6 l-3 3 z" fill="#D9776B" stroke="none"/><path d="M55 74 q5 4 10 0" fill="none"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 13px;">토끼</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+            <svg class="nt-breathe" viewBox="0 0 120 130" width="84" height="91" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#D9776B"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <circle cx="34" cy="30" r="11" fill="#C9A27A"/><circle cx="86" cy="30" r="11" fill="#C9A27A"/>
+              <circle cx="34" cy="30" r="5" fill="#E8C9A6" stroke="none"/><circle cx="86" cy="30" r="5" fill="#E8C9A6" stroke="none"/>
+              <circle cx="60" cy="58" r="34" fill="#C9A27A"/>
+              <ellipse cx="60" cy="70" rx="14" ry="10" fill="#F0DCC2"/>
+              <circle cx="47" cy="56" r="3.5" fill="#4A3728" stroke="none"/><circle cx="73" cy="56" r="3.5" fill="#4A3728" stroke="none"/>
+              <ellipse cx="60" cy="66" rx="4.5" ry="3.5" fill="#4A3728" stroke="none"/><path d="M56 74 q4 3 8 0" fill="none"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 13px;">곰</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+            <svg class="nt-breathe" viewBox="0 0 120 130" width="84" height="91" stroke="#4A3728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+              <ellipse cx="60" cy="104" rx="30" ry="22" fill="#F2D4CE"/><path d="M36 104 h48" stroke="#FBF6EC" stroke-width="4"/>
+              <path d="M28 66 L22 40 L38 46 L42 20 L56 34 L66 14 L76 34 L92 22 L92 46 L106 44 L98 66 Z" fill="#8B6A4E"/>
+              <ellipse cx="58" cy="68" rx="28" ry="24" fill="#F4DEC2"/>
+              <circle cx="48" cy="64" r="3.5" fill="#4A3728" stroke="none"/><circle cx="68" cy="64" r="3.5" fill="#4A3728" stroke="none"/>
+              <circle cx="58" cy="78" r="4" fill="#4A3728" stroke="none"/>
+            </svg>
+            <div style="font-family: 'Jua', sans-serif; font-size: 13px;">고슴도치</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; color: #8C7A66; line-height: 1.5;">러프 시안이에요. 2등신, 같은 몸통 실루엣, 스웨터 색으로 구분. 코스튬은 바뀌지 않고 표정만 바뀝니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1240,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
